@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="stylesheet" href="./css/hf.css">
+    <link rel="stylesheet" href="./css/Index2.css">
+    <script src="js/slider.js"></script>
+</head>
+
+<body>
+   
+<div class="banner">
+  <div class="text">
+    <span>BEM VINDOS</span>
+</div>
+</div>
+
+<div class="all">
+    <div id="carrosel1" class="slides">
+
+    </div>
+    <div class="btnImg"> 
+      <img class="setasSlide" onclick="esquerda()" height="50px" width="50px" src="./assets/img/carrosel/seta-esquerda.png" alt="seta-esquerda">
+      <img class="setasSlide" onclick="direita()" height="50px" width="50px" src="./assets/img/carrosel/seta-direita.png" alt="seta-direita">
+      
+    </div>
+    
+  </div>  
+  </body>
+</html>
+<script>
+var contador = 0;
+var carrosel = ['<img class="img-cortes" src="./assets/img/carrosel/primaveril.gif" alt="">',' <img class="img-cortes" src="./assets/img/carrosel/outonal.gif" alt="">', '<img  class="img-cortes" src="./assets/img/carrosel/invernal.gif" alt="">',' <img class="img-cortes" src="./assets/img/carrosel/estival.gif" alt="">', '<img class="img-cortes" src="./assets/img/carrosel/diurna.gif" alt="">', ' <img class="img-cortes" src="./assets/img/carrosel/crepuscular.gif" alt="">','<img class="img-cortes" src="./assets/img/carrosel/noturna.gif" alt=""> ']
+carrosel1.innerHTML = carrosel[contador];
+
+function direita() {
+  if(contador == carrosel.length-1){
+    contador = 0;
+  } else {
+    contador ++ ;
+  }
+  if (contador < carrosel.length) {
+    carrosel1.innerHTML = `${carrosel[contador]}`
+  }
+}
+function esquerda() {
+  contador -=1
+
+  if (contador == -1) {
+    contador = carrosel.length - 1
+  }
+  carrosel1.innerHTML = `${carrosel[contador]}`
+  
+}
+</script>

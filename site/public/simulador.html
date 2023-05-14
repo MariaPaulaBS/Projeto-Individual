@@ -6,36 +6,115 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Simulador</title>
+    <title>Cronograma</title>
 
     <script src="./js/funcoes.js"></script>
 
     <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/hf.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
 
+
+<style>
+   
+   body{
+    height: 800px;
+   }
+
+    .simulador {
+        
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-image: url('./assets/img/pexels-felix-mittermeier-956981.jpg' ) ;
+        backdrop-filter: blur(20px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        backface-visibility: hidden;
+        background-position: center;
+       
+        /* background-size: cover; */
+    }
+
+    .simulador span {
+        color: #fff;
+        /* font-weight: bold; */
+        font-size: 20px;
+    }
+
+    .entrada {
+        border: 0;
+        background-color: transparent;
+        color: #fff;
+        border-bottom: #fff solid 1px;
+        width: 250px;
+        margin-top: 7px;
+        font-size: 15px;
+
+
+    }
+
+    .entrada:focus {
+        outline: 0;
+    }
+
+    .card {
+        width: 550px;
+        height: auto;
+        background-color: #ffffff3f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 100px;
+    }
+
+    .botao {
+        /* margin-top: 40px; */
+        background-color: #022841;
+        color: #fff;
+        border-radius: 77px;
+        width: 160px;
+        border: 0;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+
+    .botao:hover {
+        /*Como ele vai ficar ao passar o mouse, ou para o mouse encima*/
+        background-color: #01090e69;
+        color: #ffffff79;
+        transition: 0.2s ease-in-out;
+
+    }
+</style>
+
 <body>
 
     <!--header inicio-->
     <div class="header">
         <div class="container">
-            <h1 class="titulo">AquaTech</h1>
+            <img class="rosa" src="assets/img/rosa2.png" alt="">
             <ul class="navbar">
-                <li>
-                    <a href="./index.html">Inicial</a>
+                <li class="mude">
+                    <a href="index.html">Home</a>
                 </li>
-                <li class="agora">Simulador</li>
-                <li>|</li>
-                <li>
-                    <a href="./login.html">Login</a>
-                </li>
-                <li>
-                    <a href="./login.html">Cadastro</a>
-                </li>
+
+                <div class="juntos">
+                    <li class="mude">
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li class="agora">
+                        <a href="#" style="color: #2e304d;">Cadastro</a>
+                    </li>
+                </div>
             </ul>
         </div>
     </div>
@@ -43,43 +122,61 @@
 
     <!-- simulador inicio -->
     <div class="simulador">
-        <div class="container">
-            <h2>Simulador</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-
+        <div class="card">
+            <h2 style="color: #fff;">Crie seu cronograma de leitura</h2>
+            <span> <b> Qual o nome do seu livro?</b></span> <input class="entrada" id="ipt_nome"><br>
+            <span> Quantas páginas tem seu livro?</span> <input class="entrada" type="number" id="ipt_paglivros"><br>
+            <span>Quando páginas você já leu hoje?</span> <input class="entrada" type="number" id="ipt_lidas"><br>
+            <span> Quantas páginas você pretente ler diaramente? </span> <input class="entrada" type="number"
+                id="ipt_diario"><br>
+            <button class="botao" onclick="calcular()">Calcular</button>
+            
+            <div id="msg" style="height: auto; width: auto; text-align: center; display: none; ">
+            </div>
         </div>
     </div>
     <!-- simulador fim -->
 
     <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
-    </div>
+    <footer>
+        <p>
+            Copyright © SE34 | Todos os direitos reservado.
+        </p>
+    </footer>
     <!--footer fim-->
 
 
 </body>
 
 </html>
+<script>
+    function calcular() {
+        var nome = ipt_nome.value;
+        var paglivro = Number(ipt_paglivros.value);
+        var paglidas = Number(ipt_lidas.value);
+        var diaria = Number(ipt_diario.value);
+        var qntsPagdia = paglivro / diaria;
+        var porcent = (paglidas / paglivro) * 100;
+        var falta = 100 - porcent;
+        msg.innerHTML = '';
+        msg.style.display = 'block';
+
+
+        msg.innerHTML = `<span  style="color: #fff;"> O livro ${nome} tem ${paglivro} páginas, e até hoje você já leu ${porcent.toFixed(0)}% e ainda falta ${falta.toFixed(0)}% do livro. Se você ler ${diaria} páginas por dia você terminará daqui á ${qntsPagdia.toFixed(0)} dias<span>`;
+
+        for (var contador = 1; contador <= qntsPagdia; contador++) {
+
+
+            if (contador == 1) {
+                msg.innerHTML += `<br><span  style="color: #fff;"> <b> ${contador}° dia</b> você lerá ${diaria- paglidas} páginas. Porque você já leu ${paglidas} páginas<span><br>`;   
+            }
+           else{
+            msg.innerHTML += `<br><span  style="color: #fff;"> <b> ${contador}° dia</b> você lerá ${diaria} páginas<span><br>`;   
+           }
+
+
+        }
+
+    }
+
+</script>

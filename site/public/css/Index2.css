@@ -1,0 +1,321 @@
+
+/* section.slides{
+
+    margin: 0;
+
+    width: 100%;
+
+    height:auto;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border-bottom :#212344 2px solid;
+   
+
+
+
+}
+
+ 
+
+.conteudo{
+
+    width: 400vw;
+
+    height: auto;
+
+    display: flex;
+
+}
+
+ 
+
+.conteudo input{
+
+    display: none;
+
+}
+
+ 
+
+.tamanho_img, .primeiro {
+
+    width: 25%;
+
+    height: 100%;
+
+    position: relative;
+
+    text-align: center;
+
+    transition: all 1s ease-in;
+
+}
+
+ 
+
+.tamanho_img img{
+
+    width: 100vw;
+
+    height: auto;
+
+}
+
+
+#git0:checked ~ .primeiro {
+    margin:0%;
+}
+#git1:checked ~ .primeiro {
+    margin: - 16.6666667% ;
+}
+#git2:checked ~ .primeiro {
+    margin: - 33.3333334%;
+}
+#git3:checked ~ .primeiro {
+    margin: - 50.0000001% ;
+}
+#git4:checked ~ .primeiro {
+    margin: - 66.6666668% ;
+}
+#git5:checked ~ .primeiro {
+    margin: - 83.3333335%;
+}
+#git6:checked ~ .primeiro {
+    margin:- 100%;
+} 
+
+section.slider{
+
+    margin: 0;
+
+    width: 100vw;
+
+    height: auto;
+
+    padding: 0;
+
+    overflow: hidden;
+
+}
+
+ 
+
+.conteudo{
+
+    width: 400vw;
+
+    height: auto;
+
+    display: flex;
+
+}
+
+ 
+
+.conteudo input{
+
+    display: none;
+
+}
+
+ 
+
+.slide-caixa, .primeiro {
+
+    width: 25%;
+
+    height: 100%;
+
+    position: relative;
+
+    text-align: center;
+
+    transition: all 1s ease-in;
+
+}
+
+ 
+
+.slide-caixa img{
+
+    width: 100vw;
+
+    height: auto;
+
+}
+
+ 
+
+.passar_manual, .passar_auto {
+
+    position: absolute;
+
+    width: 100%;
+
+    margin-top: 1%;
+
+    display: flex;
+
+    justify-content: center;
+
+    z-index: 98;
+
+}
+
+ 
+
+.passar_manual .btn_manual,
+
+.passar_auto div {
+
+    border: 1px solid #ffffffa9;
+
+    padding: 10px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 0.7s;
+
+    background-color: transparent;
+
+}
+
+ 
+
+.passar_manual .btn_manual:not(:last-child),
+
+.passar_auto div:not(:last-child) {
+
+    margin-right: 10px;
+
+}
+
+ 
+
+.passar_manual .btn_manual:hover {
+
+    background-color: #ffffffa9;
+
+}
+
+ 
+
+#slide0:checked ~ .passar_auto .passarbtn0,
+
+#slide1:checked ~ .passar_auto .passarbtn1,
+
+#slide2:checked ~ .passar_auto .passarbtn2,
+
+#slide3:checked ~ .passar_auto .passarbtn3,
+
+#slide4:checked ~ .passar_auto .passarbtn4,
+
+#slide5:checked ~ .passar_auto .passarbtn5,
+
+#slide6:checked ~ .passar_auto .passarbtn6{
+
+    background-color: #ffffffa9;
+
+}
+
+ 
+#slide0:checked ~ .primeiro {
+    margin-left:0%;
+}
+#slide1:checked ~ .primeiro {
+    margin-left: - 16.6666667% ;
+}
+#slide2:checked ~ .primeiro {
+    margin-left: - 33.3333334%;
+}
+#slide3:checked ~ .primeiro {
+    margin-left: - 50.0000001% ;
+}
+#slide4:checked ~ .primeiro {
+    margin-left: - 66.6666668% ;
+}
+#slide5:checked ~ .primeiro {
+    margin-left: - 83.3333335%;
+}
+#slide6:checked ~ .primeiro {
+    margin-left:- 100%;
+} */
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.banner{
+width: 100%;
+height: 80vh;
+background-image: url('../assets/img/starry-sky-2675322_1280.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+.text span{
+color: #ffffff;
+margin-bottom: 30px;
+font-size: 80px;
+text-align: center;
+font-weight: bolder;
+font-family: 'Times New Roman', Times, serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 60px ;
+width: 100%;
+text-shadow: black 0.12em 0.12em 0.1em;
+mix-blend-mode: soft-light;
+
+}
+.btnImg {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+   
+}
+
+.setasSlide {
+    cursor: pointer;
+} 
+
+.slides{
+ 
+    width: 80%;
+    height: 90vh;
+    
+ 
+}
+.img-cortes{
+    margin-left: 145px;
+    margin-top: 130px; 
+    width: 70%;
+    z-index: 999;
+    cursor: pointer;
+    
+}
+
+.all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+}
