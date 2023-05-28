@@ -1,0 +1,22 @@
+.comecar {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.div-img1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img1{
+    height: 50vh;
+width: 30%;
+}
+.botao{
+    width: 20vw;
+    height: 20vh;
+    border-radius: 5px;
+}

@@ -1,14 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="./css/hf.css">
-    
+    <link rel="stylesheet" href="./css/quiz.css">
+
 </head>
+
 <body>
+
+<div class="div-img1">
+    <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
+</div>
+
+<div id="comeco" class="comecar">
+    <button  onclick="comecar()" class="botao" >Começar Quiz</button>
+</div>
+    <div id="quiz" style="display: none;">
+        <div id="div_perguntas" style="color: white;"></div><br>
+
+        <button id="A" onclick="ver(this.name); " name="a">A</button><br>
+        <button id="B" onclick="ver(this.name); " name="b">B</button><br>
+        <button id="C" onclick="ver(this.name); " name="c">C</button><br>
+        <button id="D" onclick="ver(this.name); " name="d">D</button><br>
+
+
+        <div id="msg" style="color: white;"></div>
+
     
+
+
+    </div>
 </body>
+
 </html>
+<script>
+    var erros = [];
+    var acertos = [];
+    var contador = 0;
+    var perguntas = ['Pergunta1', 'Pergunta2', 'Pergunta3', 'Pergunta4', 'Pergunta5'];
+    var respostas = ['A', 'C', 'B', 'A', 'D'];
+  
+
+    var acerto = 0;
+    var erro = 0;
+
+
+
+    function comecar() {
+
+        comeco.style.display = 'none';
+        quiz.style.display = 'block';
+
+
+        div_perguntas.innerHTML = perguntas[contador];
+
+    }
+
+
+  
+
+    function terminar() {
+
+        if (contador == perguntas.length - 1) {
+            contador = 0;
+        } else {
+            contador++;
+        }
+        if (contador < perguntas.length) {
+            div_perguntas.innerHTML = `${perguntas[contador]}`
+
+        }
+    }
+
+
+    function ver(nomeBotão) {
+        
+
+
+        
+    var teste1 = A.innerHTML // a
+    var teste2 = B.innerHTML // b
+    var teste3 = C.innerHTML // c
+    var teste4 = D.innerHTML // d
+
+
+
+        if (nomeBotão == 'a') {
+
+            if (teste1 == respostas[contador]) {
+               
+                acerto++
+              
+                 console.log (acerto)
+               
+                    A.style.backgroundColor = 'green'
+              
+                
+
+                setTimeout(() => {
+                    terminar()
+                    A.style.backgroundColor = 'white'
+                },1000)
+
+            }
+
+            else {
+               
+               erro 
+                
+                A.style.backgroundColor = 'red'
+              
+                
+
+              setTimeout(() => {
+                  terminar()
+                  A.style.backgroundColor = 'white'
+              },1000)
+
+            }
+
+        }
+
+
+        if (nomeBotão == 'b') {
+
+            if (teste2 == respostas[contador]) {
+                 
+
+                acerto++
+                console.log (acerto)
+               
+               B.style.backgroundColor = 'green'
+              
+                
+
+              setTimeout(() => {
+                  terminar()
+                 B.style.backgroundColor = 'white'
+              },1000)
+
+
+            }
+            else {
+                                 
+               
+               
+               B.style.backgroundColor = 'red'
+              
+                
+
+              setTimeout(() => {
+                  terminar()
+                 B.style.backgroundColor = 'white'
+              },1000)
+
+            }
+
+        }
+
+        if (nomeBotão == 'c') {
+            if (teste3 == respostas[contador]) {
+                 
+                acerto++
+                console.log (acerto)
+               
+              C.style.backgroundColor = 'green'
+              
+                
+
+              setTimeout(() => {
+                  terminar()
+                C.style.backgroundColor = 'white'
+              },1000)
+
+            }
+            else {
+              
+               
+              C.style.backgroundColor = 'red'
+              
+                
+
+              setTimeout(() => {
+                  terminar()
+                C.style.backgroundColor = 'white'
+              },1000)
+
+            }
+        }
+        if (nomeBotão == 'd') {
+            if (teste4 == respostas[contador]) {
+                 
+                acerto++
+                console.log (acerto)
+               
+                D.style.backgroundColor = 'green'
+              
+                
+
+              setTimeout(() => {
+                  terminar()
+                  D.style.backgroundColor = 'white'
+              },1000)
+
+            }
+            else {
+                                
+                
+               
+                D.style.backgroundColor = 'red'
+              
+                
+
+              setTimeout(() => {
+                  terminar()
+                  D.style.backgroundColor = 'white'
+              },1000)
+
+            }
+
+
+          
+        }
+      
+
+
+    }
+    erro()
+
+    function erro() {
+    erro = perguntas.length - acerto;
+    console.log (erro)
+}
+
+</script>

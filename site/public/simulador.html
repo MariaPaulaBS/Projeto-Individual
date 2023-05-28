@@ -22,7 +22,12 @@
 <style>
    
    body{
-    height: 800px;
+    height: 100vh;
+    background-image: url('./assets/img/pexels-felix-mittermeier-956981.jpg' ) ;
+        /* backdrop-filter: blur(20px); */
+        background-size: cover;
+        backface-visibility: hidden;
+        background-position: center;
    }
 
     .simulador {
@@ -33,14 +38,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-image: url('./assets/img/pexels-felix-mittermeier-956981.jpg' ) ;
-        backdrop-filter: blur(20px);
-        background-repeat: no-repeat;
-        background-size: cover;
-        backface-visibility: hidden;
-        background-position: center;
+        
        
-        /* background-size: cover; */
     }
 
     .simulador span {
@@ -66,14 +65,14 @@
     }
 
     .card {
-        width: 550px;
+        width: 40%;
         height: auto;
         background-color: #ffffff3f;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        border-radius: 100px;
+        border-radius: 120px;
     }
 
     .botao {
@@ -92,14 +91,13 @@
         background-color: #01090e69;
         color: #ffffff79;
         transition: 0.2s ease-in-out;
-
     }
 </style>
 
 <body>
 
     <!--header inicio-->
-    <div class="header">
+    <div class="header" style="background-color: #01131f;">
         <div class="container">
             <img class="rosa" src="assets/img/rosa2.png" alt="">
             <ul class="navbar">
@@ -121,8 +119,9 @@
 
 
     <!-- simulador inicio -->
-    <div class="simulador">
-        <div class="card">
+    <div class="simulador" id = "simulador">
+        <div class="card" >
+            
             <h2 style="color: #fff;">Crie seu cronograma de leitura</h2>
             <span> <b> Qual o nome do seu livro?</b></span> <input class="entrada" id="ipt_nome"><br>
             <span> Quantas páginas tem seu livro?</span> <input class="entrada" type="number" id="ipt_paglivros"><br>
@@ -130,10 +129,10 @@
             <span> Quantas páginas você pretente ler diaramente? </span> <input class="entrada" type="number"
                 id="ipt_diario"><br>
             <button class="botao" onclick="calcular()">Calcular</button>
-            
-            <div id="msg" style="height: auto; width: auto; text-align: center; display: none; ">
-            </div>
+
+          
         </div>
+        <div id="msg" style="height: auto; width: auto; text-align: center; display: none; ">
     </div>
     <!-- simulador fim -->
 
@@ -151,6 +150,10 @@
 </html>
 <script>
     function calcular() {
+
+       
+       
+
         var nome = ipt_nome.value;
         var paglivro = Number(ipt_paglivros.value);
         var paglidas = Number(ipt_lidas.value);
@@ -160,8 +163,16 @@
         var falta = 100 - porcent;
         msg.innerHTML = '';
         msg.style.display = 'block';
+     
+
+     
 
 
+        if (paglivro > 1000) {
+            simulador.style.heigth = 'fit-content'
+            
+        }
+        
         msg.innerHTML = `<span  style="color: #fff;"> O livro ${nome} tem ${paglivro} páginas, e até hoje você já leu ${porcent.toFixed(0)}% e ainda falta ${falta.toFixed(0)}% do livro. Se você ler ${diaria} páginas por dia você terminará daqui á ${qntsPagdia.toFixed(0)} dias<span>`;
 
         for (var contador = 1; contador <= qntsPagdia; contador++) {
