@@ -13,10 +13,49 @@
 }
 .img1{
     height: 50vh;
-width: 30%;
+width: 100%;
 }
 .botao{
     width: 20vw;
-    height: 20vh;
+    height: 50px;
     border-radius: 5px;
+    border: 0;
+
+}
+.quiz-1{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+}
+/* .text-box {
+    width: 20vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+} */
+.all-quiz{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: row;
+}
+.quiz-sobre{
+    width:50%;
+    height:70vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+}
+.quiz-personalidade{
+    width:50%;
+    height:100vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column; 
 }

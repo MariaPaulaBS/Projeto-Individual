@@ -1,12 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corte de Espinhos e Rosas</title>
+    <link rel="stylesheet" href="./css/books.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
-    
+    <div class="all">
+        <div class="lateral">
+            <a href="entro.html"> <img class="icon" src="assets/img/botao-de-inicio (1).png" alt=""></a>
+            <a href="livros.html"> <img class="icon" src="assets/img/pilha-de-tres-livros.png" alt=""></a>
+            <a href="dash.html"> <img class="icon" src="assets/img/perfil-de-usuario (1).png" alt=""></a>
+        </div>
+        <div class="tudo">
+            <div class="esquerdo">
+
+                <h1>Corte de Espinhos e Rosas</h1>
+                <div class="div_txt1">
+                    <p>By Sarah J. Mass</p>
+                    <p>Read By <span id="b_usuario"></span></p>
+                    <p>Number of pages: 434 pages</p>
+                </div>
+
+                <div> <span id="cont"></span> <span class="estrelas" id="stars"></span> </div>
+
+                <p class="txt2">Ela roubou uma vida. Agora deve pagar com o coração. Em Corte de espinhos e rosas, livro
+                    que da início a uma das séries mais queridas pelo público, acompanhe as aventuras de Feyre pelo
+                    perigoso e deslumbrante mundo das fadas. Sarah J. Maas é uma verdadeira estrela: após apenas uma
+                    semana de vendas, a série Corte de Espinhos e Rosas estreou em segundo lugar na lista do New York
+                    Times. Ela também é autora da série Trono de Vidro, que já teve mais de 1 milhão de exemplares
+                    vendidos.
+
+                    Num mundo dividido uma muralha mágica separa duas espécies. De um lado, os feéricos vivem dentro de
+                    suas fronteiras cheias de beleza e mistério; do outro, os humanos possuem apenas medo, desconfiança
+                    e dificuldades.
+
+                    Feyre, filha de um casal de mercadores humanos e falidos, se torna caçadora para sustentar a
+                    família. Dura como as flechas que carrega, letal como sua pontaria, ela abandona as fantasias de
+                    garota e as troca pela árdua vida nas florestas ao redor de sua aldeia.
+
+                    Sua única alegria é observar as cores e sonhar em capturá-las. Mas, na floresta, coberta de neve
+                    tudo é branco e árido; como o ódio pelos feéricos que carrega no coração; Como as telas que não pode
+                    comprar ou colorir. Até que um enorme lobo cruza seu caminho... Sem hesitar, Feyre dispara... uma
+                    flecha. Um ato de rebelião.
+
+                    Após matar o lobo, uma criatura bestial surge exigindo uma reparação. Arrastada para além do muro,
+                    para uma terra mágica e traiçoeira - que ela só conhece por meio de lendas -, a jovem descobre que
+                    seu captor não é um animal, mas Tamlin, Grão Senhor da Terra Primaveril. Um feérico com um segredo,
+                    escondido sob uma máscara. Ela descobre ainda que o então animal que havia assassinado era, na
+                    verdade, uma criatura mágica, uma fada zoomórfica transformada em lobo.
+
+                    À medida que ela descobre mais sobre este mundo onde a magia impera, seus sentimentos por Tamlin
+                    passam da mais pura hostilidade até uma paixão avassaladora. Enquanto isso, uma sinistra e antiga
+                    sombra avança sobre o mund­­o das fadas e Feyre deve provar seu amor para detê-la ou Tamlin e seu
+                    povo estarão condenados.
+
+                    Corte de espinhos e rosas é um livro de fantasia de tirar o fôlego. Memorável em todos os aspectos,
+                    com personagens complexos, enredo rico e um magnífico mundo de fantasia combinados impecavelmente
+                    para criar um romance épico.</p>
+                <span id="pergunta" class="star"> Quantas estrelas você da para esse livro? <input type="number"
+                        class="entrada" onkeyup="estrelass()" id="estrela"></span>
+                <span class="simulador" id="simule">Quer fazer um cronograma sobre esse livro? <a
+                        href="simulador.html">Clique aqui</a> </span>
+            </div>
+
+            <div class="direita">
+                <img class="imgLivro" src="./assets/img/livro1.jpg" alt="" class="livro1">
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class="outrosLivros">
+        <img class="imgOutros" src="assets/img/81PGQZ8qBlL.jpg" alt="">
+        <img class="imgOutros" src="assets/img/livro2.jpg" alt="">
+        <img class="imgOutros" src="assets/img/livro4.jpg" alt="">
+        <img class="imgOutros" src="assets/img/livronovela.jpg" alt="">
+    </div>
+
+    <footer>
+        <p>
+            Copyright © Maria <3 | Todos os direitos reservado. </p>
+    </footer>
 </body>
+
 </html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function estrelass() {
+
+        var QntEsltrelas = Number(estrela.value)
+        if (estrela.value = '') {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Campo Vazio',
+                icon: 'error',
+                confirmButtonText: 'TENTAR NOVAMENTE'
+            })
+        }
+        if (QntEsltrelas <= 0 || QntEsltrelas > 5) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'A quantidade de estrelas tem que estar entre 0 e 5',
+                icon: 'error',
+                confirmButtonText: 'TENTAR NOVAMENTE'
+            })
+
+        }
+        else {
+
+            for (var contador = 0; contador < QntEsltrelas; contador++) {
+                cont.innerHTML = ` ${(contador + 1).toFixed(1)}`;
+                stars.innerHTML += `⭐`;
+            }
+            setTimeout(() => {
+                pergunta.style.display = 'none'
+                simule.style.display = 'block'
+            }, 1000)
+
+
+        }
+    }
+
+
+
+</script>

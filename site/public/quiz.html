@@ -12,230 +12,311 @@
 </head>
 
 <body>
-
-<div class="div-img1">
-    <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
-</div>
-
-<div id="comeco" class="comecar">
-    <button  onclick="comecar()" class="botao" >Começar Quiz</button>
-</div>
-    <div id="quiz" style="display: none;">
-        <div id="div_perguntas" style="color: white;"></div><br>
-
-        <button id="A" onclick="ver(this.name); " name="a">A</button><br>
-        <button id="B" onclick="ver(this.name); " name="b">B</button><br>
-        <button id="C" onclick="ver(this.name); " name="c">C</button><br>
-        <button id="D" onclick="ver(this.name); " name="d">D</button><br>
-
-
-        <div id="msg" style="color: white;"></div>
-
+    <div class="all-quiz">
+        <!-- <div class="quiz-personalidade">
+            <div class="quiz-sobre">
+                <div class="div-img1">
+                    <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
+                </div>
+                <div class="text-box">
+                    <button onclick="comecar()" class="botao">Começar Quiz</button>
     
+                </div>
+            </div>
+        </div> -->
+        <div class="quiz-sobre">
+            <div class="div-img1">
+                <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
+            </div>
+            <div class="text-box">
+                <button onclick="comecar()" id="comeco" class="botao">Começar Quiz</button>
 
-
+            </div>
+        </div>
     </div>
+
+        <div id="quiz" style="display: none;">
+            <div class="quiz-1">
+                <div id="div_perguntas" style="color: white;"></div><br>
+
+                <button id="A" class="botao" style="background-color: white;" onclick="ver(this.name) ; " name="A">O
+                    amor</button><br>
+                <button id="B" class="botao" style="background-color: white;" onclick="ver(this.name) ;" name="B">O
+                    calderão</button><br>
+                <button id="C" class="botao" style="background-color: white;" onclick="ver(this.name) ;" name="C">A
+                    ganância</button><br>
+                <button id="D" class="botao" style="background-color: white;" onclick="ver(this.name) ;" name="D">A
+                    mágia</button><br>
+
+
+                <div id="msg" style="color: white;"></div>
+            </div>
+
+
+
+        </div>
 </body>
 
 </html>
 <script>
-    var erros = [];
-    var acertos = [];
+
     var contador = 0;
-    var perguntas = ['Pergunta1', 'Pergunta2', 'Pergunta3', 'Pergunta4', 'Pergunta5'];
+    var perguntas = ['No primeiro livro qual era a resposta do enigma da Amarantha em sobre a montanha',
+        'Qual é o capítulo que a Feyre perdoa o Rhys por ter mentido sobre a parceria',
+        'Quantas cortes existem em Prithyan',
+        'Quem é o pai do Lucien',
+        'Qual é o nome do feérico que Feyre mata no começo de corte de espinhos e rosas'];
     var respostas = ['A', 'C', 'B', 'A', 'D'];
-  
+
 
     var acerto = 0;
     var erro = 0;
 
+    var cont = 0;
+
+
+    //     function changeColor(color) {
+    //                 document.nomeBotão.style.background = color;
+    //      }
+
+    //      function bgChange() {
+
+    //   document.button.style.backgroundColor = 'green';
+    // }
+
 
 
     function comecar() {
-
+        
         comeco.style.display = 'none';
         quiz.style.display = 'block';
 
 
         div_perguntas.innerHTML = perguntas[contador];
-
+        limpar()
     }
 
 
-  
+
 
     function terminar() {
 
         if (contador == perguntas.length - 1) {
-            contador = 0;
+            // contador = 0;
+          
+            cadastrarQuiz()
         } else {
             contador++;
+            cont++;
         }
         if (contador < perguntas.length) {
             div_perguntas.innerHTML = `${perguntas[contador]}`
 
         }
+
+
+        if (contador == 1) {
+
+
+            A.innerHTML = `56`;
+            B.innerHTML = `34`;
+            C.innerHTML = `55`;
+            D.innerHTML = `40`;
+
+        }
+
+        if (contador == 2) {
+
+
+            A.innerHTML = `6`;
+            B.innerHTML = `7`;
+            C.innerHTML = `10`;
+            D.innerHTML = `9`;
+
+        }
+        if (contador == 3) {
+
+
+            A.innerHTML = `Helion`;
+            B.innerHTML = `Eris`;
+            C.innerHTML = `Tamlin`;
+            D.innerHTML = `Beron`;
+
+        }
+
+        if (contador == 4) {
+
+
+            A.innerHTML = `Aleksander`;
+            B.innerHTML = `Adam`;
+            C.innerHTML = `Andrak`;
+            D.innerHTML = `Andras`;
+
+
+
+        }
+
+
+
+
+
     }
 
 
     function ver(nomeBotão) {
-        
 
 
-        
-    var teste1 = A.innerHTML // a
-    var teste2 = B.innerHTML // b
-    var teste3 = C.innerHTML // c
-    var teste4 = D.innerHTML // d
+        if (cont == contador) {
 
 
-
-        if (nomeBotão == 'a') {
-
-            if (teste1 == respostas[contador]) {
-               
+            if (respostas[contador] == nomeBotão) {
                 acerto++
-              
-                 console.log (acerto)
-               
-                    A.style.backgroundColor = 'green'
-              
-                
+
+                console.log(acerto)
+
+                //   id.style.backgroundColor = 'green'
+
+                // changeColor('green');
+                // bgChange() 
 
                 setTimeout(() => {
                     terminar()
-                    A.style.backgroundColor = 'white'
-                },1000)
+                    // id.style.backgroundColor = 'white'
+                    // changeColor('white');
 
-            }
-
-            else {
-               
-               erro 
-                
-                A.style.backgroundColor = 'red'
-              
-                
-
-              setTimeout(() => {
-                  terminar()
-                  A.style.backgroundColor = 'white'
-              },1000)
-
-            }
-
-        }
-
-
-        if (nomeBotão == 'b') {
-
-            if (teste2 == respostas[contador]) {
-                 
-
-                acerto++
-                console.log (acerto)
-               
-               B.style.backgroundColor = 'green'
-              
-                
-
-              setTimeout(() => {
-                  terminar()
-                 B.style.backgroundColor = 'white'
-              },1000)
-
+                }, 1000)
 
             }
             else {
-                                 
-               
-               
-               B.style.backgroundColor = 'red'
-              
-                
+                erro++
+                console.log(erro)
+                //    id.style.backgroundColor = 'red'
 
-              setTimeout(() => {
-                  terminar()
-                 B.style.backgroundColor = 'white'
-              },1000)
 
-            }
 
-        }
-
-        if (nomeBotão == 'c') {
-            if (teste3 == respostas[contador]) {
-                 
-                acerto++
-                console.log (acerto)
-               
-              C.style.backgroundColor = 'green'
-              
-                
-
-              setTimeout(() => {
-                  terminar()
-                C.style.backgroundColor = 'white'
-              },1000)
-
-            }
-            else {
-              
-               
-              C.style.backgroundColor = 'red'
-              
-                
-
-              setTimeout(() => {
-                  terminar()
-                C.style.backgroundColor = 'white'
-              },1000)
+                setTimeout(() => {
+                    terminar()
+                    //  id.style.backgroundColor = 'white'
+                }, 1000)
 
             }
         }
-        if (nomeBotão == 'd') {
-            if (teste4 == respostas[contador]) {
-                 
-                acerto++
-                console.log (acerto)
-               
-                D.style.backgroundColor = 'green'
-              
-                
-
-              setTimeout(() => {
-                  terminar()
-                  D.style.backgroundColor = 'white'
-              },1000)
-
-            }
-            else {
-                                
-                
-               
-                D.style.backgroundColor = 'red'
-              
-                
-
-              setTimeout(() => {
-                  terminar()
-                  D.style.backgroundColor = 'white'
-              },1000)
-
-            }
-
-
-          
-        }
-      
-
-
     }
-    erro()
 
-    function erro() {
-    erro = perguntas.length - acerto;
-    console.log (erro)
-}
+
+
+
+
+
+
+    function cadastrarQuiz() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+
+        var errosVar = Number(erro);
+        var acertosVar = Number(acerto);
+        var fkUsuarioVar = Number(sessionStorage.getItem('ID_USUARIO'))
+
+        console.log(acertosVar)
+        console.log(errosVar)
+        console.log(fkUsuarioVar)
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarQuiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                errosServer: errosVar,
+                acertosServer: acertosVar,
+                fkUsuarioServer: fkUsuarioVar
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log('responta ok')
+
+                setTimeout(() => {
+                    window.location = "./dashboard/dashboard.html";
+                }, "2000")
+
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+                console.log(' throw ("Houve um erro ao tentar realizar o cadastro!");')
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
+    }
+
+
+    function limpar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+
+        var fkUsuarioVar = Number(sessionStorage.getItem('ID_USUARIO'))
+
+        
+        console.log(fkUsuarioVar)
+        // Enviando o valor da nova input
+        fetch("/usuarios/limpar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                fkUsuarioServer: fkUsuarioVar
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log('responta ok')
+
+                // setTimeout(() => {
+                //     window.location = "./dashboard/dashboard.html";
+                // }, "2000")
+
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+                console.log(' throw ("Houve um erro ao tentar realizar o cadastro!");')
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>

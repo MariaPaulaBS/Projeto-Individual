@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./css/hf.css">
+    <link rel="stylesheet" href="./css/quiz.css">
+
+</head>
+
+<body>
+    <div class="all-quiz">
+        <!-- <div class="quiz-personalidade">
+            <div class="quiz-sobre">
+                <div class="div-img1">
+                    <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
+                </div>
+                <div class="text-box">
+                    <button onclick="comecar()" class="botao">Começar Quiz</button>
+    
+                </div>
+            </div>
+        </div> -->
+        <div class="quiz-sobre">
+            <div class="div-img1">
+                <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
+            </div>
+            <div class="text-box">
+                <button onclick="comecar()" id="comeco" class="botao">Começar Quiz</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz" style="display: none;">
+        <div class="quiz-1">
+            <div id="div_perguntas" style="color: white;"></div><br>
+
+            <button id="A" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+                name="A">Roxo</button><br>
+            <button id="B" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+                name="B">Azul Acizentado</button><br>
+            <button id="C" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+                name="C">Vermelho</button><br>
+            <button id="D" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+                name="D">Azul</button><br>
+            <button id="E" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+                name="E">Avelã</button><br>
+            <button id="F" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+                name="F">Prata</button><br>
+            <button id="G" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+                name="G">Preto</button><br>
+            <button id="H" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+                name="H">Rosa</button><br>
+
+
+            <div id="msg" style="color: white;"></div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    var contador = 0;
+    var perguntas = ['Qual cor você prefere?',
+        'Quem você é num grupo de amigos?',
+        'Em uma situação de perigo o que você faria para salavr alguém que ama?',
+        'Escolha um poder',
+        'Qual dessas caracteristicas combina mais com a sua personalidade?'];
+  
+
+
+    var rhys = 0;
+    var feyre = 0;
+    var mor = 0;
+    var azriel = 0;
+    var cassian = 0;
+    var amren = 0;
+    var nestha = 0;
+    var elain = 0;
+    var cont = 0;
+
+
+    //     function changeColor(color) {
+    //                 document.nomeBotão.style.background = color;
+    //      }
+
+    //      function bgChange() {
+
+    //   document.button.style.backgroundColor = 'green';
+    // }
+
+
+
+    function comecar() {
+
+        comeco.style.display = 'none';
+        quiz.style.display = 'block';
+
+
+        div_perguntas.innerHTML = perguntas[contador];
+
+    }
+
+
+
+
+    function terminar() {
+
+        if (contador == perguntas.length - 1) {
+            // contador = 0;
+            cadastrarQuiz()
+        } else {
+            contador++;
+            cont++;
+        }
+        if (contador < perguntas.length) {
+            div_perguntas.innerHTML = `${perguntas[contador]}`
+
+        }
+
+
+        if (contador == 1) {
+
+
+            A.innerHTML = `Lider do grupo`;
+            B.innerHTML = `A que apenas observa`;
+            C.innerHTML = `A Bonitona e iludidora`;
+            D.innerHTML = `A Senhora do Grupo`;
+            E.innerHTML = `Introvertido e Calado`;
+            F.innerHTML = `Brincalhão e Divertido`;
+            G.innerHTML = `Cara Fechada e Resmungona`;
+            H.innerHTML = `Deliada e Avoada`;
+           
+        }
+
+        if (contador == 2) {
+
+
+            A.innerHTML = `Faria de tudo mesmo que isso me machucasse profundamente`;
+            B.innerHTML = `Ajudaria até onde eu posso`;
+            C.innerHTML = `Usaria meus poderes em para ajudar quem eu amo`;
+            D.innerHTML = `Ajudaria pesquisando sobre o perigo`;
+            E.innerHTML = `Ficaria com medo de perdelos e faria de tudo pela família`;
+            F.innerHTML = `Ajudaria ludando contra o perigo`;
+            G.innerHTML = `Resmungaria mais ajudaria`;
+            H.innerHTML = `Ficaria no meu mundo e nem perceberia que estão em perigo`;
+
+        }
+        if (contador == 3) {
+
+            A.innerHTML = `Manipulação da Escuridão e Demati`;
+            B.innerHTML = `Todos os poderes das 7 cortes`;
+            C.innerHTML = `O poder da verdade`;
+            D.innerHTML = `Ser um ser mais antigo que um mundo e ter poderes inimaginavies`;
+            E.innerHTML = `Encantador de sombras e ter o poder do Sifrão Iliryano`;
+            F.innerHTML = `Ter o poder do Sifrão Iliryano`;
+            G.innerHTML = `Poder sobre a morte`;
+            H.innerHTML = `Prever o futuro`;
+           
+
+        }
+
+        if (contador == 4) {
+
+
+            A.innerHTML = `Liderança`;
+            B.innerHTML = `Poderosa`;
+            C.innerHTML = `Leal`;
+            D.innerHTML = `Sincera`;
+            E.innerHTML = `Misterioso`;
+            F.innerHTML = `Brincalhão`;
+            G.innerHTML = `Resmungona`;
+            H.innerHTML = `Avoada`;
+          
+
+
+
+        }
+
+
+
+
+
+    }
+
+
+    function ver(nomeBotão) {
+
+        if (nomeBotão == A) {
+            rhys++
+
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+        if (nomeBotão == B) {
+            feyre++
+
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+        if (nomeBotão == C) {
+            mor++
+
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+        if (nomeBotão == D) {
+            amren++
+
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+        if (nomeBotão == E) {
+            azriel++
+
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+        if (nomeBotão == F) {
+            cassian++
+
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+        if (nomeBotão == G) {
+            nestha++
+
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+        if (nomeBotão == H) {
+            elain++
+
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+
+    }
+
+
+
+
+
+
+
+
+    // function cadastrarQuiz() {
+    //     // aguardar();
+
+    //     //Recupere o valor da nova input pelo nome do id
+    //     // Agora vá para o método fetch logo abaixo
+
+    //     var errosVar = Number(erro);
+    //     var acertosVar = Number(acerto);
+    //     var fkUsuarioVar = Number(sessionStorage.getItem('ID_USUARIO'))
+
+    //     console.log(acertosVar)
+    //     console.log(errosVar)
+    //     console.log(fkUsuarioVar)
+    //     // Enviando o valor da nova input
+    //     fetch("/usuarios/cadastrarQuiz", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             // crie um atributo que recebe o valor recuperado aqui
+    //             // Agora vá para o arquivo routes/usuario.js
+    //             errosServer: errosVar,
+    //             acertosServer: acertosVar,
+    //             fkUsuarioServer: fkUsuarioVar
+
+    //         })
+    //     }).then(function (resposta) {
+
+    //         console.log("resposta: ", resposta);
+
+    //         if (resposta.ok) {
+    //             console.log('responta ok')
+
+    //             setTimeout(() => {
+    //                 window.location = "dash.html";
+    //             }, "2000")
+
+
+    //         } else {
+    //             throw ("Houve um erro ao tentar realizar o cadastro!");
+    //             console.log(' throw ("Houve um erro ao tentar realizar o cadastro!");')
+    //         }
+    //     }).catch(function (resposta) {
+    //         console.log(`#ERRO: ${resposta}`);
+
+    //     });
+
+    //     return false;
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

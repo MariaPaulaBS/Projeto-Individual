@@ -1,37 +1,176 @@
 /* pagina mural */
 
-*,
+/* *,
 body {
   font-family: "Exo 2", sans-serif;
-}
+} */
 
-.label-captura {
-  display: flex;
-  justify-content: center;
-}
 
-.dash-right .avisos {
-  width: 100%;
-  /* border: 3px solid pink; */
-  color: rgb(216, 216, 216);
-  font-family: "Exo 2", sans-serif;
-}
 
-.dash-right .avisos .container {
+.lateral{
   display: flex;
   flex-direction: column;
+  height: 90vh;
+  width: 50%;
+  background-color: black;
+  justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+}
+*{
+  color:#ffffff;
+  font-family: "MedievalSharp";
+}
+@font-face {
+  font-family: "MedievalSharp";
+  src: url("../MedievalSharp/MedievalSharp-Regular.ttf") format("opentype");
+ 
 }
 
-.dash-right .avisos .container .div-form {
+body{
+  background-color:  #020d14;
+  margin: 0;
+}
+
+
+.all{
+ 
+  display: flex;
+  flex-direction: row;
+  
+}
+.lateral{
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 50%;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+}
+.tudo{
+  display: flex;
+  flex-direction: row;
+  
+  padding: 0;
+  margin: 0;
+}
+.esquerdo{
+  width: 60%;
+height: 90vh;
+margin-left: 20px;
+
+
+}
+
+.div_txt1{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+.txt2{
+  font-size: smaller;
+  text-align:justify;
+  
+}
+.direita{
+  width: 40%;
+height: 90vh;
+
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+}
+.imgLivro{
+width:55%;
+height: 70vh;
+z-index: 999;
+box-shadow: black 20px 10px 5px;;
+}
+.star{
+  display: block;
+}
+.simulador{
+  display: none;
+}
+.entrada{
+border-radius: 20px;
+background-color: #ffffffb2;
+border: 0;
+}
+.entrada:focus {
+  outline: 0;
+}
+
+
+.outrosLivros{
+  height: 50vh;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.493);   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly; 
+}
+.imgOutros{
+width: 150px;  
+height: 200px;
+z-index: 999; 
+box-shadow: black 2px 2px 2px;
+}
+.imgOutros:hover {
+
+  /* vertical-align: middle;
+  
+  border-style: none; */
+  
+  width: 170px;
+  
+  height: 250px;
+  box-shadow: rgba(0, 0, 0, 0.527) 10px 5px 5px;
+  cursor: pointer;
+  
+  -moz-transition: all 0.3s;
+  
+  -webkit-transition: all 0.3s;
+  
+  transition: all 0.3s;
+  
+  }
+footer {
+  background-color:  #01090e;
+  color: #ffffff;
+  font-size: 14px;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
 }
 
-.dash-right .avisos .container .div-form #form_postagem {
-  width: 100%;
+footer p {
+  margin: 10px 0;
+  font-family: "MedievalSharp";
 }
 
-.dash-right .avisos .div-form label {
+
+
+
+
+
+
+/* .dash-right .avisos .div-form label {
   width: 100%;
 }
 
@@ -41,9 +180,9 @@ body {
 }
 
 .dash-right .avisos .div-form textarea {
-  width: 100%;
+  width: 100%; */
   /* color: #E6005A; */
-  border: 3px solid #e6005a;
+  /* border: 3px solid #e6005a;
   background-color: white;
   border-radius: 5px;
 }
@@ -106,10 +245,10 @@ body {
 
 .div-buttons > * {
   margin-left: 30px;
-}
+} */
 
 /* pagina graficos */
-
+/* 
 .dash-header {
   background-color: #212124;
 }
@@ -209,10 +348,10 @@ body {
   width: 13%;
   height: 30%;
   border-radius: 50px;
-  margin-top: 6%;
+  margin-top: 6%; */
   /* background-color: #c7c7c7; */
-}
-
+/* } */
+/* 
 .btns-dash {
   display: flex;
   align-items: center;
@@ -274,4 +413,4 @@ body {
 canvas {
   width: 100% !important;
   height: 100% !important;
-}
+}  */

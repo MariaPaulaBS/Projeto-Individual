@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corte de Espinhos e Rosas</title>
+    <link rel="stylesheet" href="./css/books.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="all">
+        <div class="lateral">
+          <a href="entro.html">  <img class="icon" src="assets/img/botao-de-inicio (1).png" alt=""></a>
+          <a href="livros.html"> <img class="icon" src="assets/img/pilha-de-tres-livros.png" alt=""></a>
+          <a href="dash.html"> <img class="icon" src="assets/img/perfil-de-usuario (1).png" alt=""></a>
+        </div>
+        <div class="tudo">
+            <div class="esquerdo">
+
+                <h1>Corte de Asas e Ruína</h1 >
+                <div class="div_txt1">
+                    <p>By Sarah J. Mass</p>
+                    <p>Read By <span id="b_usuario"></span></p>
+                    <p>Number of pages: 686 pages</p>
+                </div>
+
+                <div> <span id="cont"></span> <span class="estrelas" id="stars"></span> </div>
+
+                <p class="txt2">Seguindo os acontecimentos do volume anterior, Corte de névoa e fúria,
+                     acompanhamos a saga de Feyre Archeon, que suportou a fome, o frio e a desesperança,
+                      atravessou a Montanha e foi Sob a Montanha. Reclamou seu amor, quebrou a maldição e 
+                      livrou o povo feérico da mais terrível ameaça... ou não? Amarantha pode ter sido aniquilada,
+                       mas o rei de Hybern pretende usar o Caldeirão para moldar um novo tempo; uma época de trevas e escravidão.
+
+                    A guerra se aproxima, um conflito que promete devastar Prythian. Em meio à Corte Primaveril,
+                     num perigoso jogo de intrigas e mentiras, a Grã-Senhora da Corte Noturna esconde seu laço de
+                      parceria e sua verdadeira lealdade. Longe de sua corte, longe de seu Grão-Senhor e verdadeiro 
+                      amor, ela reúne informações, na esperança de vencer Hybern.
+                    
+                    Tamlin está fazendo acordos com o invasor, Jurian recuperou suas forças e as rainhas humanas 
+                    prometem se alinhar aos desejos de Hybern em troca de imortalidade. O exército inimigo parece
+                     imbatível. Mas o sonho de Velaris é como um farol em meio às trevas. O ideal de um mundo mais justo
+                    
+                    Enquanto isso Feyre e seus amigos precisam aprender em quais Grãos-Senhores confiar, e procurar
+                     aliados nos mais improváveis lugares. Porém, a Quebradora da Maldição ainda tem uma ou duas cartas 
+                     na manga antes que sua ilha queime.
+                    
+                    Sarah J. Maas faz questão de salientar neste livro que Rhysand e Feyre são iguais. A protagonista não 
+                    é retratada como uma donzela fraca em perigo, ela realmente é uma guerreira forte e determinada!  
+                    Os personagens são muito complexos, todas as perguntas que permeiam a trama serão respondidas. 
+                    Corte de asas e ruína é um romance épico que preenche todos os requisitos para um livro exemplar,
+                     abrindo caminho de forma impecável para o final de uma série inesquecível.</p>
+                <span id="pergunta" class="star"> Quantas estrelas você da para esse livro? <input type="number"
+                        class="entrada" onkeyup="estrelass()" id="estrela"></span>
+                        <span class="simulador" id="simule">Quer fazer um cronograma sobre esse livro?  <a href="simulador.html">Clique aqui</a> </span>
+            </div>
+
+            <div class="direita">
+                <img class="imgLivro" src="./assets/img/livro2.jpg" alt="" class="livro1">
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class="outrosLivros">
+        <img class="imgOutros" src="assets/img/livro1.jpg" alt="">
+        <img class="imgOutros" src="assets/img/81PGQZ8qBlL.jpg" alt="">
+        <img class="imgOutros" src="assets/img/livro4.jpg" alt="">
+        <img class="imgOutros" src="assets/img/livronovela.jpg" alt="">
+    </div>
+
+    <footer>
+        <p>
+            Copyright © Maria <3 | Todos os direitos reservado. </p>
+    </footer>
+</body>
+
+</html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function estrelass() {
+
+        var QntEsltrelas = Number(estrela.value)
+        if (estrela.value = '') {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Campo Vazio',
+                icon: 'error',
+                confirmButtonText: 'TENTAR NOVAMENTE'
+            })
+        }
+        if (QntEsltrelas <= 0 || QntEsltrelas > 5) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'A quantidade de estrelas tem que estar entre 0 e 5',
+                icon: 'error',
+                confirmButtonText: 'TENTAR NOVAMENTE'
+            })
+
+        }
+        else {
+
+            for (var contador = 0; contador < QntEsltrelas; contador++) {
+                cont.innerHTML = ` ${(contador + 1).toFixed(1)}`;
+                stars.innerHTML += `⭐`;
+            }
+            setTimeout(() => {
+                pergunta.style.display = 'none'
+                simule.style.display = 'block'
+            }, 1000)
+
+
+        }
+    }
+
+
+
+</script>
