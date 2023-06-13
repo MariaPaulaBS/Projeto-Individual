@@ -164,6 +164,215 @@ function cadastrarQuiz(req, res) {
     }
 }
 
+function cadastrarQuizPerso(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var perso = req.body.persoServer;
+   var fkUsuario = req.body.fkUsuarioServer;
+   
+
+    // Faça as validações dos valores
+    if ( perso == undefined) {
+        res.status(400).send("Seu personagem está undefined!");
+    }
+    else if (fkUsuario == undefined) {
+        res.status(400).send("Seu fkUsuario está undefined!");
+    }else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarQuizPerso(perso, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+// Livros 
+
+
+
+function cadastrarLivro1(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var estrelas1 = req.body. estrelas1Server;
+   var fkUsuario = req.body.fkUsuarioServer;
+   
+
+    // Faça as validações dos valores
+    if ( estrelas1 == undefined) {
+        res.status(400).send("Seu personagem está undefined!");
+    }
+    else if (fkUsuario == undefined) {
+        res.status(400).send("Seu fkUsuario está undefined!");
+    }else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarLivro1(estrelas1, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+
+
+function cadastrarLivro2(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var estrelas2 = req.body.estrelas2Server;
+   var fkUsuario = req.body.fkUsuarioServer;
+   
+
+    // Faça as validações dos valores
+    if ( estrelas2 == undefined) {
+        res.status(400).send("Seu personagem está undefined!");
+    }
+    else if (fkUsuario == undefined) {
+        res.status(400).send("Seu fkUsuario está undefined!");
+    }else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarLivro2(estrelas2, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function cadastrarLivro3(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var estrelas3 = req.body.estrelas3Server;
+    console.log("controler 1" + estrelas3)
+    var fkUsuario = req.body.fkUsuarioServer;
+    console.log("controler 1" + fkUsuario)
+   
+
+    // Faça as validações dos valores
+    if ( estrelas3 == undefined) {
+        res.status(400).send("Seu personagem está undefined!");
+    }
+    else if (fkUsuario == undefined) {
+        res.status(400).send("Seu fkUsuario está undefined!");
+    }else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarLivro3(estrelas3, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function cadastrarLivro4(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var estrelas4 = req.body.estrelas4Server;
+   var fkUsuario = req.body.fkUsuarioServer;
+   
+
+    // Faça as validações dos valores
+    if ( estrelas4 == undefined) {
+        res.status(400).send("Seu personagem está undefined!");
+    }
+    else if (fkUsuario == undefined) {
+        res.status(400).send("Seu fkUsuario está undefined!");
+    }else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarLivro4(estrelas4, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function cadastrarLivro5(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var estrelas5 = req.body.estrelas5Server;
+   var fkUsuario = req.body.fkUsuarioServer;
+   
+
+    // Faça as validações dos valores
+    if ( estrelas5 == undefined) {
+        res.status(400).send("Seu personagem está undefined!");
+    }
+    else if (fkUsuario == undefined) {
+        res.status(400).send("Seu fkUsuario está undefined!");
+    }else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarLivro5(estrelas5, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 
 
 module.exports = {
@@ -171,6 +380,12 @@ module.exports = {
     cadastrar,
     limpar,
     cadastrarQuiz,
+    cadastrarQuizPerso,
+    cadastrarLivro1,
+    cadastrarLivro2,
+    cadastrarLivro3,
+    cadastrarLivro4,
+    cadastrarLivro5,
     listar,
     testar
 }

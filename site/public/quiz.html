@@ -12,20 +12,28 @@
 </head>
 
 <body>
-    <div class="all-quiz">
-        <!-- <div class="quiz-personalidade">
+    <div id="all" style="display: block;" >
+    <div  class="all-quiz">
+        <div class="lateral">
+            <a href="entro.html"> <img class="icon" src="assets/img/botao-de-inicio (1).png" alt=""></a>
+            <a href="livros.html"> <img class="icon" src="assets/img/pilha-de-tres-livros.png" alt=""></a>
+            <a href="./dashboard/dashboard.html"> <img class="icon" src="assets/img/perfil-de-usuario (1).png" alt=""></a>
+        </div>
+        <div class="quiz-personalidade" id="comeco1">
             <div class="quiz-sobre">
                 <div class="div-img1">
-                    <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
+                    <h1>Quem é você no Círculo Intimo?</h1>
+                    <img class="img1" src="./assets/img/cirulo intimo2.jpg" alt="">
                 </div>
                 <div class="text-box">
-                    <button onclick="comecar()" class="botao">Começar Quiz</button>
+                   <a href="quiz-personalidade.html"> <button  class="botao">Começar Quiz de personalidade</button></a>
     
                 </div>
             </div>
-        </div> -->
+        </div>
         <div class="quiz-sobre">
             <div class="div-img1">
+                <h1>O quando você conhece ACOTAR?</h1>
                 <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
             </div>
             <div class="text-box">
@@ -34,18 +42,19 @@
             </div>
         </div>
     </div>
-
+</div>
         <div id="quiz" style="display: none;">
             <div class="quiz-1">
+                <div id="imgV"></div>
                 <div id="div_perguntas" style="color: white;"></div><br>
 
-                <button id="A" class="botao" style="background-color: white;" onclick="ver(this.name) ; " name="A">O
+                <button id="A" class="botaoQuiz" style="background-color: white;" onclick="ver(this.name, this.id) ; " name="A">O
                     amor</button><br>
-                <button id="B" class="botao" style="background-color: white;" onclick="ver(this.name) ;" name="B">O
+                <button id="B" class="botaoQuiz" style="background-color: white;" onclick="ver(this.name, this.id) ;" name="B">O
                     calderão</button><br>
-                <button id="C" class="botao" style="background-color: white;" onclick="ver(this.name) ;" name="C">A
+                <button id="C" class="botaoQuiz" style="background-color: white;" onclick="ver(this.name, this.id) ;" name="C">A
                     ganância</button><br>
-                <button id="D" class="botao" style="background-color: white;" onclick="ver(this.name) ;" name="D">A
+                <button id="D" class="botaoQuiz" style="background-color: white;" onclick="ver(this.name, this.id) ;" name="D">A
                     mágia</button><br>
 
 
@@ -55,17 +64,31 @@
 
 
         </div>
+
+        
+        <footer>
+            <p>
+                Copyright © Maria <3 | Todos os direitos reservado. </p>
+        </footer>
 </body>
 
 </html>
 <script>
 
     var contador = 0;
-    var perguntas = ['No primeiro livro qual era a resposta do enigma da Amarantha em sobre a montanha',
-        'Qual é o capítulo que a Feyre perdoa o Rhys por ter mentido sobre a parceria',
-        'Quantas cortes existem em Prithyan',
-        'Quem é o pai do Lucien',
-        'Qual é o nome do feérico que Feyre mata no começo de corte de espinhos e rosas'];
+    var perguntas = ['No primeiro livro qual era a resposta do enigma da Amarantha em sobre a montanha?',
+        'Qual é o capítulo que a Feyre perdoa o Rhys por ter mentido sobre a parceria?',
+        'Quantas cortes existem em Prithyan?',
+        'Quem é o pai do Lucien?',
+        'Qual é o nome do feérico que Feyre mata no começo de corte de espinhos e rosas?'];
+     var img= ['<img  class = "img-Vetor" src="assets/img/pergunta1.jpg" alt="">',
+     '<img class = "img-Vetor" src="assets/img/perso/feyre e rhys 1.jpg" alt="">',
+     '<img class = "img-Vetor" src="assets/img/prythian.jpg" alt="">',
+     '<img class = "img-Vetor" src="assets/img/perso/lucian.jpg" alt="">',
+'<img class = "img-Vetor" src="assets/img/ultimaPergunta.jpg" alt="">'
+
+    ];
+
     var respostas = ['A', 'C', 'B', 'A', 'D'];
 
 
@@ -87,12 +110,14 @@
 
 
     function comecar() {
-        
+        all.style.display = 'none';
+        comeco1.style.display = 'none';
         comeco.style.display = 'none';
         quiz.style.display = 'block';
 
 
         div_perguntas.innerHTML = perguntas[contador];
+        imgV.innerHTML = img[contador];
         limpar()
     }
 
@@ -111,6 +136,7 @@
         }
         if (contador < perguntas.length) {
             div_perguntas.innerHTML = `${perguntas[contador]}`
+            imgV.innerHTML = img[contador];
 
         }
 
@@ -163,7 +189,7 @@
     }
 
 
-    function ver(nomeBotão) {
+    function ver(nomeBotão, idBotao) {
 
 
         if (cont == contador) {
@@ -173,15 +199,16 @@
                 acerto++
 
                 console.log(acerto)
+                console.log(idBotao)
 
-                //   id.style.backgroundColor = 'green'
+                document.getElementById(idBotao).style.backgroundColor = 'green'
 
                 // changeColor('green');
                 // bgChange() 
 
                 setTimeout(() => {
                     terminar()
-                    // id.style.backgroundColor = 'white'
+                    document.getElementById(idBotao).style.backgroundColor = 'white'
                     // changeColor('white');
 
                 }, 1000)
@@ -190,13 +217,13 @@
             else {
                 erro++
                 console.log(erro)
-                //    id.style.backgroundColor = 'red'
+                  document.getElementById(idBotao).style.backgroundColor ='red'
 
 
 
                 setTimeout(() => {
                     terminar()
-                    //  id.style.backgroundColor = 'white'
+                    document.getElementById(idBotao).style.backgroundColor  = 'white'
                 }, 1000)
 
             }

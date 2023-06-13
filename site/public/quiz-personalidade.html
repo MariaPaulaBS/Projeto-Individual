@@ -12,48 +12,37 @@
 </head>
 
 <body>
-    <div class="all-quiz">
-        <!-- <div class="quiz-personalidade">
-            <div class="quiz-sobre">
-                <div class="div-img1">
-                    <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
-                </div>
-                <div class="text-box">
-                    <button onclick="comecar()" class="botao">Começar Quiz</button>
-    
-                </div>
-            </div>
-        </div> -->
+    <!-- <div class="all-quiz">
+      
         <div class="quiz-sobre">
-            <div class="div-img1">
-                <img class="img1" src="./assets/img/feyre.velaris.jpg" alt="">
-            </div>
+           
             <div class="text-box">
-                <button onclick="comecar()" id="comeco" class="botao">Começar Quiz</button>
+                <button onclick="iniciar()" id="comeco" class="botao">Começar Quiz</button>
 
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div id="quiz" style="display: none;">
-        <div class="quiz-1">
+    <div id="quiz">
+        <div class="quiz-1" id="quizz">
+            <div id="imgV"></div>
             <div id="div_perguntas" style="color: white;"></div><br>
 
-            <button id="A" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+            <button id="A" class="botaoQuiz" style="background-color: white;" onclick="rhys(this.name);"
                 name="A">Roxo</button><br>
-            <button id="B" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
-                name="B">Azul Acizentado</button><br>
-            <button id="C" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+            <button id="B" class="botaoQuiz" style="background-color: white;" onclick="feyre(this.name);" name="B">Azul
+                Acizentado</button><br>
+            <button id="C" class="botaoQuiz" style="background-color: white;" onclick="mor(this.name);"
                 name="C">Vermelho</button><br>
-            <button id="D" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+            <button id="D" class="botaoQuiz" style="background-color: white;" onclick="cassian(this.name);"
                 name="D">Azul</button><br>
-            <button id="E" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+            <button id="E" class="botaoQuiz" style="background-color: white;" onclick="azriel(this.name);"
                 name="E">Avelã</button><br>
-            <button id="F" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+            <button id="F" class="botaoQuiz" style="background-color: white;" onclick="amren(this.name);"
                 name="F">Prata</button><br>
-            <button id="G" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+            <button id="G" class="botaoQuiz" style="background-color: white;" onclick="nestha(this.name);"
                 name="G">Preto</button><br>
-            <button id="H" class="botao" style="background-color: white;" onclick="ver(this.name) ;"
+            <button id="H" class="botaoQuiz" style="background-color: white;" onclick="elain(this.name);"
                 name="H">Rosa</button><br>
 
 
@@ -63,7 +52,25 @@
 
 
     </div>
+
+
+    <!-- <div id="resultado" style="display: flex; width: 100%; height: 50vh; border: 1px white solid;" class="resul">
+        <img id="img2" src="" alt="">
+       <span id="msg" style="color: white; border: 1px rgb(179, 39, 39) solid; width: 80%; height: 50vh;"></span>
+    </div> -->
+
+    <div class="resultado" id="resultado" style="display: none;">
+        <img id="img2" src="./assets/img/rhys.jpg" alt="">
+        <p id="msg">Rhysand, o governante da Corte Noturna, você é enigmática e cativante. 
+            Ele é inteligente, estrategista e leal, sempre disposto a proteger e lutar pelos que ama.
+             Rhysand também é um romântico incorrigível, capaz de expressar amor e afeto intensos.
+              Sua empatia e compaixão o tornam um líder respeitado. Por trás de sua fachada fria, 
+              esconde um coração gentil e compassivo. Rhysand é um símbolo de esperança, superação e redenção,
+               capaz de enfrentar seus traumas e evoluir como pessoa. Sua personalidade multifacetada e complexa 
+               o torna um personagem inesquecível.</p>
+    </div>
 </body>
+
 
 </html>
 <script>
@@ -74,40 +81,38 @@
         'Em uma situação de perigo o que você faria para salavr alguém que ama?',
         'Escolha um poder',
         'Qual dessas caracteristicas combina mais com a sua personalidade?'];
-  
 
+    var img = ['<img  class = "img-Vetor" src="assets/img/personagens.jpg" alt="">',
+        '<img class = "img-Vetor" src="assets/img/irmãs archeron.jpg" alt="">',
+        '<img class = "img-Vetor" src="assets/img/perigo.jpg" alt="">',
+        '<img class = "img-Vetor" src="assets/img/poder.jpg" alt="">',
+        '<img class = "img-Vetor" src="assets/img/rosa vidral.png" alt="">'
 
-    var rhys = 0;
-    var feyre = 0;
-    var mor = 0;
-    var azriel = 0;
-    var cassian = 0;
-    var amren = 0;
-    var nestha = 0;
-    var elain = 0;
+    ];
+
+    var Persorhys = 0;
+    var Persofeyre = 0;
+    var Persomor = 0;
+    var Persoazriel = 0;
+    var Persocassian = 0;
+    var Persoamren = 0;
+    var Personestha = 0;
+    var Persoelain = 0;
+    var Txt = '';
     var cont = 0;
 
 
-    //     function changeColor(color) {
-    //                 document.nomeBotão.style.background = color;
-    //      }
+    div_perguntas.innerHTML = perguntas[contador];
+    imgV.innerHTML = img[contador];
+    // function iniciar() {
 
-    //      function bgChange() {
+    //     comeco.style.display = 'none';
+    //     quiz.style.display = 'block';
 
-    //   document.button.style.backgroundColor = 'green';
+
+
+
     // }
-
-
-
-    function comecar() {
-
-        comeco.style.display = 'none';
-        quiz.style.display = 'block';
-
-
-        div_perguntas.innerHTML = perguntas[contador];
-
-    }
 
 
 
@@ -116,14 +121,22 @@
 
         if (contador == perguntas.length - 1) {
             // contador = 0;
-            cadastrarQuiz()
+            quizz.style.display = 'none'
+            
+
+            validar()
+            cadastrarQuizPerso()
+
+
+
+
         } else {
             contador++;
             cont++;
         }
         if (contador < perguntas.length) {
             div_perguntas.innerHTML = `${perguntas[contador]}`
-
+            imgV.innerHTML = img[contador];
         }
 
 
@@ -138,7 +151,7 @@
             F.innerHTML = `Brincalhão e Divertido`;
             G.innerHTML = `Cara Fechada e Resmungona`;
             H.innerHTML = `Deliada e Avoada`;
-           
+
         }
 
         if (contador == 2) {
@@ -164,7 +177,7 @@
             F.innerHTML = `Ter o poder do Sifrão Iliryano`;
             G.innerHTML = `Poder sobre a morte`;
             H.innerHTML = `Prever o futuro`;
-           
+
 
         }
 
@@ -179,7 +192,7 @@
             F.innerHTML = `Brincalhão`;
             G.innerHTML = `Resmungona`;
             H.innerHTML = `Avoada`;
-          
+
 
 
 
@@ -192,59 +205,88 @@
     }
 
 
-    function ver(nomeBotão) {
 
-        if (nomeBotão == A) {
-            rhys++
+
+
+
+
+
+
+
+    function rhys(nomeBotão) {
+
+        if (nomeBotão == 'A') {
+            Persorhys++
+            setTimeout(() => {
+                terminar()
+            }, 1000)
+        }
+
+
+
+    }
+    function feyre(nomeBotão) {
+
+
+        if (nomeBotão == 'B') {
+            Persofeyre++
 
             setTimeout(() => {
                 terminar()
             }, 1000)
         }
-        if (nomeBotão == B) {
-            feyre++
+    }
+
+
+    function mor(nomeBotão) {
+        if (nomeBotão == 'C') {
+            Persomor++
 
             setTimeout(() => {
                 terminar()
             }, 1000)
         }
-        if (nomeBotão == C) {
-            mor++
+    }
+    function amren(nomeBotão) {
+        if (nomeBotão == 'D') {
+            Persoamren++
 
             setTimeout(() => {
                 terminar()
             }, 1000)
         }
-        if (nomeBotão == D) {
-            amren++
+    }
+    function azriel(nomeBotão) {
+        if (nomeBotão == 'E') {
+            Persoazriel++
 
             setTimeout(() => {
                 terminar()
             }, 1000)
         }
-        if (nomeBotão == E) {
-            azriel++
+    }
+    function cassian(nomeBotão) {
+        if (nomeBotão == 'F') {
+            Persocassian++
 
             setTimeout(() => {
                 terminar()
             }, 1000)
         }
-        if (nomeBotão == F) {
-            cassian++
+    }
+    function nestha(nomeBotão) {
+        if (nomeBotão == 'G') {
+            Personestha++
 
             setTimeout(() => {
                 terminar()
             }, 1000)
         }
-        if (nomeBotão == G) {
-            nestha++
 
-            setTimeout(() => {
-                terminar()
-            }, 1000)
-        }
-        if (nomeBotão == H) {
-            elain++
+    }
+    function elain(nomeBotão) {
+        if (nomeBotão == 'H') {
+            Persoelain++
 
             setTimeout(() => {
                 terminar()
@@ -260,56 +302,200 @@
 
 
 
-    // function cadastrarQuiz() {
-    //     // aguardar();
 
-    //     //Recupere o valor da nova input pelo nome do id
-    //     // Agora vá para o método fetch logo abaixo
 
-    //     var errosVar = Number(erro);
-    //     var acertosVar = Number(acerto);
-    //     var fkUsuarioVar = Number(sessionStorage.getItem('ID_USUARIO'))
 
-    //     console.log(acertosVar)
-    //     console.log(errosVar)
-    //     console.log(fkUsuarioVar)
-    //     // Enviando o valor da nova input
-    //     fetch("/usuarios/cadastrarQuiz", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             // crie um atributo que recebe o valor recuperado aqui
-    //             // Agora vá para o arquivo routes/usuario.js
-    //             errosServer: errosVar,
-    //             acertosServer: acertosVar,
-    //             fkUsuarioServer: fkUsuarioVar
+    function validar() {
+        if (Persorhys > Persofeyre && Persorhys > Persomor && Persorhys > Persoamren && Persorhys > Persoazriel && Persorhys > Persocassian && Persorhys > Personestha && Persorhys > Persoelain) {
+            Txt = 'Rhysand'
 
-    //         })
-    //     }).then(function (resposta) {
+         resultado.style.display = 'flex'
 
-    //         console.log("resposta: ", resposta);
 
-    //         if (resposta.ok) {
-    //             console.log('responta ok')
+
+
+
+        }
+        if (Persofeyre > Persorhys && Persofeyre > Persomor && Persofeyre > Persoamren && Persofeyre > Persoazriel && Persofeyre > Persocassian && Persofeyre > Personestha && Persofeyre > Persoelain) {
+            Txt = ' Feyre Archeron'
+
+            alert('você é a  Feyre')
+        }
+        if (Persomor > Persorhys && Persomor > Persofeyre && Persomor > Persoamren && Persomor > Persoazriel && Persomor > Persocassian && Persomor > Personestha && Persomor > Persoelain) {
+            Txt = ' Morrigan'
+            alert('você é a mor')
+
+        }
+        if (Persoamren > Persorhys && Persoamren > Persofeyre && Persoamren > Persomor && Persoamren > Persoazriel && Persoamren > Persocassian && Persoamren > Personestha && Persoamren > Persoelain) {
+            Txt = ' Amren'
+            alert('você é a  Amren')
+
+        }
+        if (Persoazriel > Persorhys && Persoazriel > Persofeyre && Persoazriel > Persomor && Persoazriel > Persoamren && Persoazriel > Persocassian && Persoazriel > Personestha && Persoazriel > Persoelain) {
+
+            Txt = 'Azriel'
+            alert('você é o Azriel')
+
+        }
+        if (cassian > Persorhys && Persocassian > Persofeyre && Persocassian > Persomor && Persocassian > Persoamren && Persocassian > Persoazriel && Persocassian > Personestha && Persocassian > Persoelain) {
+
+            Txt = 'Cassian'
+            alert('você é o Cassian')
+
+        }
+        if (Personestha > Persorhys && Personestha > Persofeyre && Personestha > Persomor && Personestha > Persoamren && Personestha > Persoazriel && Personestha > Persocassian && Personestha > Persoelain) {
+
+            Txt = 'Nestha Archeron'
+            alert('você é a nestha')
+
+        }
+        if (Persoelain > Persorhys && Persoelain > Persofeyre && Persoelain > Persomor && Persoelain > Persoamren && Persoelain > Persoazriel && Persoelain > Persocassian && Persoelain > Personestha) {
+            Txt = 'Elain Archeron'
+
+            alert('você é a elain')
+        }
+
+
+
+    }
+
+    //     function personagem() {
+
+    //         quiz.style.display = 'none';
+    //         resultado.style.display = 'block';
+
+
+
+    //         if (Txt == 'Rhysand') {
+    //             img.scr='assets/img/rhys.jpg'
+    //             msg.innerHTML = 'Rhysand, o governante da Corte Noturna, você é enigmática e cativante. Ele é inteligente, estrategista e leal, sempre disposto a proteger e lutar pelos que ama. Rhysand também é um romântico incorrigível, capaz de expressar amor e afeto intensos. Sua empatia e compaixão o tornam um líder respeitado. Por trás de sua fachada fria, esconde um coração gentil e compassivo. Rhysand é um símbolo de esperança, superação e redenção, capaz de enfrentar seus traumas e evoluir como pessoa. Sua personalidade multifacetada e complexa o torna um personagem inesquecível.'
+
 
     //             setTimeout(() => {
-    //                 window.location = "dash.html";
-    //             }, "2000")
-
-
-    //         } else {
-    //             throw ("Houve um erro ao tentar realizar o cadastro!");
-    //             console.log(' throw ("Houve um erro ao tentar realizar o cadastro!");')
+    //             cadastrarQuizPerso()
+    // }, 100)
     //         }
-    //     }).catch(function (resposta) {
-    //         console.log(`#ERRO: ${resposta}`);
+    //         if (Txt == 'Feyre Archeron') {
+    //             img.scr='assets/img/feyre.jpg' 
+    // msg.innerHTML= `Feyre, a protagonista de "ACOTAR", possui uma personalidade corajosa e determinada. Ela é uma jovem forte e resiliente, disposta a enfrentar qualquer desafio para proteger aqueles que ama. Feyre é uma caçadora habilidosa e destemida, demonstrando sua valentia em várias situações. Além disso, ela é leal e dedicada, sempre colocando as necessidades dos outros antes das suas. Feyre também é uma artista talentosa, expressando sua criatividade através da pintura. Sua jornada de autodescoberta e crescimento a transforma em uma personagem inspiradora, capaz de superar suas próprias limitações e abraçar seu destino com coragem.
 
-    //     });
 
-    //     return false;
-    // }
+
+
+
+
+    // `;
+
+    //             setTimeout(() => {
+    //             cadastrarQuizPerso()
+    // }, 100)
+    //         }
+    //         if (Txt == 'Morrigan') {
+
+
+    //             setTimeout(() => {
+    //             cadastrarQuizPerso()
+    // }, 100)
+
+    //         }
+    //         if (Txt == 'Amren') {
+
+    //             setTimeout(() => {
+    //             cadastrarQuizPerso()
+    // }, 100)
+
+    //         }
+    //         if (Txt == 'Azriel') {
+
+    //             setTimeout(() => {
+    //             cadastrarQuizPerso()
+    // }, 100)
+
+    //         }
+    //         if (Txt == 'Cassian') {
+
+    //             setTimeout(() => {
+    //             cadastrarQuizPerso()
+    // }, 100)
+
+    //         }
+    //         if (Txt == 'Nestha Archeron') {
+
+    //             setTimeout(() => {
+    //             cadastrarQuizPerso()
+    // }, 100)
+
+    //         }
+    //         if (Txt == 'Elain Archeron') {
+
+    //             setTimeout(() => {
+    //             cadastrarQuizPerso()
+    // }, 100)
+
+    //         }
+
+
+
+
+
+
+
+
+    //     }
+
+
+
+
+    function cadastrarQuizPerso() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        sessionStorage.NOME_PERSONAGEM = `${Txt}`;
+
+        var persoVar = Txt;
+
+        var fkUsuarioVar = Number(sessionStorage.getItem('ID_USUARIO'))
+
+        console.log(persoVar)
+
+        console.log(fkUsuarioVar)
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarQuizPerso", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                persoServer: persoVar,
+                fkUsuarioServer: fkUsuarioVar
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log('responta ok')
+
+                setTimeout(() => {
+                    window.location = "./dashboard/dashboard.html";
+                }, "5000")
+
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+                console.log(' throw ("Houve um erro ao tentar realizar o cadastro!");')
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
+    }
 
 
 

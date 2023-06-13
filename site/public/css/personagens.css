@@ -12,6 +12,8 @@
   body{
     background-color:black;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     
   }
@@ -20,6 +22,7 @@
 .banner {
     background-repeat: no-repeat;
     z-index:0;
+    background-image: url('../assets/img/fundo\ novo.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -38,7 +41,7 @@
   .header {
     width: 100%;
     height: 20vh;
-  
+    margin-left: 946px;
   }
   
   .navbar {
@@ -75,20 +78,21 @@
   }
 
 .banner span{
-   color: #ffffff;
-   font-size: 45px;
-   margin-bottom: 30px;
-   text-align: center;
-  
-   font-weight: bolder;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 60px;
-   width: 100%;
-   text-shadow: black 0.12em 0.12em 0.1em;
-   margin-top: 150px;
-   margin-bottom: 150px;
+  color: #ffffff94;
+    margin-bottom: 30px;
+    font-size: 80px;
+    text-align: center;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    text-shadow: rgba(0, 0, 0, 0.527) 10px 2px 5px;
+    /* mix-blend-mode: soft-light; */
+    /* margin-top: 150px; */
+    margin-bottom: 150px;
+    font-family:"NARROW" ;
 }
 .padrao{
     display: flex;

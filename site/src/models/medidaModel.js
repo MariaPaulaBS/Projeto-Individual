@@ -25,6 +25,29 @@ function buscarUltimasMedidas(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function buscarUltimasMedidas2() {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+
+        instrucaoSql = `select sum(acertos) as acertos, sum(erros) as erros
+        from resultado where fkQuiz = 1
+        and fkUsuario = ${idUsuario}
+        order by idResultado desc;`;
+
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select livro, estrelas ,count(estrelas) as 'pontuacao' from estrelas group by estrelas, livro;`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 function buscarMedidasEmTempoReal(idUsuario) {
 
     instrucaoSql = ''
@@ -52,5 +75,6 @@ function buscarMedidasEmTempoReal(idUsuario) {
 
 module.exports = {
     buscarUltimasMedidas,
+    buscarUltimasMedidas2,
     buscarMedidasEmTempoReal
 }

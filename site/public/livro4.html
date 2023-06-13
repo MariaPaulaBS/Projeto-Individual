@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corte de Espinhos e Rosas</title>
     <link rel="stylesheet" href="./css/books.css">
+    <link rel="shortcut icon" href="./assets/img/velaris2-removebg-preview.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -15,7 +16,7 @@
         <div class="lateral">
           <a href="entro.html">  <img class="icon" src="assets/img/botao-de-inicio (1).png" alt=""></a>
           <a href="livros.html"> <img class="icon" src="assets/img/pilha-de-tres-livros.png" alt=""></a>
-          <a href="dash.html"> <img class="icon" src="assets/img/perfil-de-usuario (1).png" alt=""></a>
+          <a href="./dashboard/dashboard.html"> <img class="icon" src="assets/img/perfil-de-usuario (1).png" alt=""></a>
         </div>
         <div class="tudo">
             <div class="esquerdo">
@@ -83,10 +84,11 @@
 </html>
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
+    var LISTA_ESTRELA4 = [];
     function estrelass() {
 
         var QntEsltrelas = Number(estrela.value)
+        LISTA_ESTRELA4.push(QntEsltrelas);
         if (estrela.value = '') {
             Swal.fire({
                 title: 'Error!',
@@ -111,14 +113,66 @@
                 stars.innerHTML += `⭐`;
             }
             setTimeout(() => {
-                pergunta.style.display = 'none'
+                const estrelas = document.getElementById('pergunta')
+                 estrelas.remove()
                 simule.style.display = 'block'
+                cadastrarLivro4()
+        
             }, 1000)
 
 
         }
     }
+    function cadastrarLivro4() {
+        // aguardar();
+        var QntEsltrelas = LISTA_ESTRELA4[0];
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+      
 
+        var estrelas4Var = QntEsltrelas
+
+        var fkUsuarioVar = Number(sessionStorage.getItem('ID_USUARIO'))
+
+        console.log(estrelas4Var)
+
+        console.log(fkUsuarioVar)
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarLivro4", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                estrelas4Server: estrelas4Var,
+                fkUsuarioServer: fkUsuarioVar
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log('responta ok')
+
+                // setTimeout(() => {
+                //     window.location = "./dashboard/dashboard.html";
+                // }, "5000")
+
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+                console.log(' throw ("Houve um erro ao tentar realizar o cadastro!");')
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
+    }
 
 
 </script>

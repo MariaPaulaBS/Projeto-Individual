@@ -33,7 +33,7 @@ function cadastrar(nome, email, senha ) {
 
 function limpar(idUsuario) {
     var instrucao2 = `
-    truncate table resultado ;
+    delete from resultado where fkUsuario = ${idUsuario};
 `;
 return database.executar(instrucao2);
 }
@@ -51,6 +51,99 @@ function cadastrarQuiz(acertos, erros, fkUsuario  ) {
     return database.executar(instrucao);
    
 }
+function  cadastrarQuizPerso(perso, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", perso, fkUsuario );
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    
+
+    var instrucao = `
+        INSERT INTO resultado (Personagem, fkUsuario, fkQuiz, dtResultado  ) VALUES ('${perso}','${fkUsuario}', ${2}, default);
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+   // select estrelas from livroAvaliação where nomeLivro = 'livro q que' Group by avaliação
+}
+
+
+
+// Livros
+function  cadastrarLivro1(estrelas1, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", estrelas1, fkUsuario );
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    
+
+    var instrucao = `
+       insert into estrelas (livro, estrelas, fkUsuario)  values ('acotar',${estrelas1}, ${fkUsuario})
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+   // select estrelas from livroAvaliação where nomeLivro = 'livro q que' Group by avaliação
+}
+
+function  cadastrarLivro2(estrelas2, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", estrelas2, fkUsuario );
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    
+
+    var instrucao = `
+       insert into estrelas(livro, estrelas, fkUsuario) values ('acomaf',${estrelas2}, ${fkUsuario})
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+   // select estrelas from livroAvaliação where nomeLivro = 'livro q que' Group by avaliação
+}
+
+function  cadastrarLivro3(estrelas3, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",estrelas3, fkUsuario );
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    
+
+    var instrucao = `
+       insert into estrelas (livro, estrelas, fkUsuario)  values ('acowar',${estrelas3}, ${fkUsuario})
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+   // select estrelas from livroAvaliação where nomeLivro = 'livro q que' Group by avaliação
+}
+
+
+function  cadastrarLivro4(estrelas4, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", estrelas4, fkUsuario );
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    
+
+    var instrucao = `
+       insert into estrelas (livro, estrelas, fkUsuario) values ('acofas',${estrelas4}, ${fkUsuario}) 
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+   // select estrelas from livroAvaliação where nomeLivro = 'livro q que' Group by avaliação
+}
+
+function  cadastrarLivro5(estrelas5, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", estrelas5, fkUsuario );
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    
+
+    var instrucao = `
+       insert into estrelas (livro, estrelas, fkUsuario) values ('acosf',${estrelas5}, ${fkUsuario})
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+   // select estrelas from livroAvaliação where nomeLivro = 'livro q que' Group by avaliação
+}
 
 
 module.exports = {
@@ -58,5 +151,11 @@ module.exports = {
     cadastrar,
     limpar,
     cadastrarQuiz,
+    cadastrarQuizPerso,
+    cadastrarLivro1,
+    cadastrarLivro2,
+    cadastrarLivro3,
+    cadastrarLivro4,
+    cadastrarLivro5,
     listar,
 };

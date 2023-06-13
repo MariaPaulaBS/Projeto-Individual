@@ -1,3 +1,13 @@
+*{
+    color:#ffffff;
+    font-family: "MedievalSharp";
+}
+@font-face {
+    font-family: "MedievalSharp";
+    src: url("../MedievalSharp/MedievalSharp-Regular.ttf") format("opentype");
+   
+}
+
 .comecar {
     display: block;
     display: flex;
@@ -10,18 +20,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.div-img1 h1{
+    color: #fff;
+   font-size: larger;
+   margin-bottom: 30px;
 }
 .img1{
     height: 50vh;
 width: 100%;
+
+}
+.img-Vetor{
+    width: auto;
+    height: 300px;
+}
+.botaoQuiz{
+    width: 20vw;
+    height: 50px; 
+    color: #01090e;
 }
 .botao{
     width: 20vw;
     height: 50px;
     border-radius: 5px;
     border: 0;
-
-}
+    margin-top: 50px;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+  background-color: #022841;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 3px 5px #d6d3d3;
+  }
+  
+  .botao:hover {background-color: #03111b69}
+  
+  .botao:active {
+    background-color: #03111b69;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }
 .quiz-1{
  
     display: flex;
@@ -59,3 +105,35 @@ width: 100%;
     align-items: center;  
     flex-direction: column; 
 }
+
+.lateral{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 10%;
+    background-color: #01090e;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+}
+footer {
+    background-color:  #01090e;
+    color: #ffffff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+  }
+  
+  footer p {
+    margin: 10px 0;
+    font-family: "MedievalSharp";
+  }
+  
