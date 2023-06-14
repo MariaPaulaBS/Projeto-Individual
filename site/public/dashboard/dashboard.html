@@ -243,12 +243,12 @@
                 data: [],
                 fill: true,
                 borderColor: [
-                    'red',
-                    '#0583D2'
+                    '#FF0000',
+                    '#008000'
                 ],
                 backgroundColor: [
-                    'red',
-                    '#0583D2'
+                '#FF0000',
+                    '#008000'
                 ],
                 tension: 0.1
             },
@@ -256,10 +256,11 @@
                 label: 'Quantidade de questões',
                 data: [],
                 fill: true,
-                borderColor: 'blue',
+                borderColor: 'green',
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)'
+                    'green',
+                    
+                   
                 ],
                 tension: 0.1
             }
@@ -401,17 +402,37 @@
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
 
+
+
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             labels.push(registro.nome);
-
-
-            dados.datasets[0].data.push(registro.estrelas1);
-            dados.datasets[1].data.push(registro.estrelas2);
-            dados.datasets[2].data.push(registro.estrelas3);
-            dados.datasets[3].data.push(registro.estrelas4);
-            dados.datasets[4].data.push(registro.estrelas5);
+            dados.datasets[0].data.push(registro.estrelas1),
+            dados.datasets[0].data.push(registro.estrelas2),
+            dados.datasets[0].data.push(registro.estrelas3),
+            dados.datasets[0].data.push(registro.estrelas4),
+            dados.datasets[0].data.push(registro.estrelas5),
+            dados.datasets[1].data.push(registro.estrelas1 + 2),
+            dados.datasets[1].data.push(registro.estrelas2 ),
+            dados.datasets[1].data.push(registro.estrelas3 -1),
+            dados.datasets[1].data.push(registro.estrelas4 + 1),
+            dados.datasets[1].data.push(registro.estrelas5 + 1),
+            dados.datasets[2].data.push(registro.estrelas1),
+            dados.datasets[2].data.push(registro.estrelas2),
+            dados.datasets[2].data.push(registro.estrelas3),
+            dados.datasets[2].data.push(registro.estrelas4),
+            dados.datasets[2].data.push(registro.estrelas5),
+            dados.datasets[3].data.push(registro.estrelas1),
+            dados.datasets[3].data.push(registro.estrelas2),
+            dados.datasets[3].data.push(registro.estrelas3),
+            dados.datasets[3].data.push(registro.estrelas4),
+            dados.datasets[3].data.push(registro.estrelas5),
+            dados.datasets[4].data.push(registro.estrelas1),
+            dados.datasets[4].data.push(registro.estrelas2),
+            dados.datasets[4].data.push(registro.estrelas3),
+            dados.datasets[4].data.push(registro.estrelas4),
+            dados.datasets[4].data.push(registro.estrelas5)       
         }
 
         console.log('----------------------------------------------')
