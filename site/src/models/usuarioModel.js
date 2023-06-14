@@ -77,7 +77,7 @@ function  cadastrarLivro1(estrelas1, fkUsuario) {
     
 
     var instrucao = `
-       insert into estrelas (livro, estrelas, fkUsuario)  values ('acotar',${estrelas1}, ${fkUsuario})
+       insert into estrelas (fkLivro, estrelas, fkUsuario)  values (1,${estrelas1}, ${fkUsuario})
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -92,7 +92,7 @@ function  cadastrarLivro2(estrelas2, fkUsuario) {
     
 
     var instrucao = `
-       insert into estrelas(livro, estrelas, fkUsuario) values ('acomaf',${estrelas2}, ${fkUsuario})
+       insert into estrelas(fkLivro, estrelas, fkUsuario) values (2,${estrelas2}, ${fkUsuario})
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -107,7 +107,7 @@ function  cadastrarLivro3(estrelas3, fkUsuario) {
     
 
     var instrucao = `
-       insert into estrelas (livro, estrelas, fkUsuario)  values ('acowar',${estrelas3}, ${fkUsuario})
+       insert into estrelas (fkLivro, estrelas, fkUsuario)  values (3,${estrelas3}, ${fkUsuario})
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -123,7 +123,7 @@ function  cadastrarLivro4(estrelas4, fkUsuario) {
     
 
     var instrucao = `
-       insert into estrelas (livro, estrelas, fkUsuario) values ('acofas',${estrelas4}, ${fkUsuario}) 
+       insert into estrelas (fkLivro, estrelas, fkUsuario) values (5,${estrelas4}, ${fkUsuario}) 
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -138,7 +138,7 @@ function  cadastrarLivro5(estrelas5, fkUsuario) {
     
 
     var instrucao = `
-       insert into estrelas (livro, estrelas, fkUsuario) values ('acosf',${estrelas5}, ${fkUsuario})
+       insert into estrelas (fkLivro, estrelas, fkUsuario) values (4,${estrelas5}, ${fkUsuario})
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

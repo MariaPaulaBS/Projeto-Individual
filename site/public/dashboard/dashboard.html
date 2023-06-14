@@ -25,61 +25,63 @@
 </head>
 
 <body>
-    <div class="all">
-        <div class="lateral">
-            <a href="../entro.html"> <img class="icon" src="../assets/img/botao-de-inicio (1).png" alt=""></a>
-            <a href="../livros.html"> <img class="icon" src="../assets/img/pilha-de-tres-livros.png" alt=""></a>
-            <a href="dashboard.html
+    <div class="all2">
+        <div class="all">
+            <div class="lateral">
+                <a href="../entro.html"> <img class="icon" src="../assets/img/botao-de-inicio (1).png" alt=""></a>
+                <a href="../livros.html"> <img class="icon" src="../assets/img/pilha-de-tres-livros.png" alt=""></a>
+                <a href="dashboard.html
             "> <img class="icon" src="../assets/img/perfil-de-usuario (1).png" alt=""></a>
-            <span id="b_usuario"></span>
+                <span id="b_usuario"></span>
 
-        </div>
-        <div class="tudo">
-
-
-
-            <div id="grafico1" class="display-block">
-                <h3 class="tituloGraficos">
-                    <span id="tituloAquario1">SEU RESULTADO</span>
-                </h3>
-                <div class="graph">
-                    <canvas id="grafico_personalidade" style="z-index: 9990;"></canvas>
-                </div>
             </div>
-            <div class="kpis">
-                <div class="kpi">
-                    <div class="txt">
-                        Seu Personagem
+            <div class="tudo">
+
+
+
+                <div id="grafico1" class="display-block">
+                    <h3 class="tituloGraficos">
+                        <span id="tituloAquario1">SEU RESULTADO</span>
+                    </h3>
+                    <div class="graph">
+                        <canvas id="grafico_personalidade" style="z-index: 9990;"></canvas>
                     </div>
-                    <span id="perso" class="personagem"></span>
+                </div>
+                <div class="kpis">
+                    <div class="kpi">
+                        <div class="txt">
+                            Seu Personagem
+                        </div>
+                        <span id="perso" class="personagem"></span>
+                    </div>
+
+
+                    <div class="ranking">
+                        <div id="img"></div>
+
+                    </div>
                 </div>
 
-                <div class="ranking">
-                    <div class="txt">
-                        Os livros mais votados
-                    </div>
-                    <div class="esquerda"></div>
-
-                </div>
             </div>
-
-
-
 
 
         </div>
-
         <div class="grafico2">
 
-            <div class="graph">
+            <div class="graph2">
                 <canvas id="grafico_livros" style="z-index: 9990;"></canvas>
             </div>
         </div>
 
-        <footer>
-            <p>
-                Copyright © Maria <3 | Todos os direitos reservado. </p>
-        </footer>
+    </div>
+    <footer>
+        <p>
+            Copyright © Maria <3 | Todos os direitos reservado. </p>
+    </footer>
+
+
+
+
 
 
 
@@ -89,9 +91,52 @@
 
 <script>
 
+
+    var persos = [
+        '<img class="img-Vetor" src="../assets/img/rhys.jpg" alt="">',
+        '<img class="img-Vetor" src="../assets/img/feyre3.jpg" alt="">',
+        '<img class="img-Vetor" src="../assets/img/perso/Morrigan.jpg" alt="">',
+        '<img class="img-Vetor" src="../assets/img/perso/amren.jpg" alt="">',
+        '<img class="img-Vetor" src="../assets/img/perso/azriel.jpg" alt="">',
+        '<img class="img-Vetor" src="../assets/img/perso/Cassian.jpg" alt="">',
+        '<img class="img-Vetor" src="../assets/img/perso/nestha2.png" alt="">',
+        '<img class="img-Vetor" src="../assets/img/perso/elain.png" alt="">'
+    ]
     //    m_usuario.innerHTML = sessionStorage.EMAIL_USUARIO;
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     perso.innerHTML = sessionStorage.NOME_PERSONAGEM;
+
+
+    var personagem = sessionStorage.NOME_PERSONAGEM;
+    if (personagem == 'Rhysand') {
+        img.innerHTML = persos[0]
+    }
+    else if (personagem == ' Feyre Archeron') {
+        img.innerHTML = persos[1]
+    }
+    else if (personagem == ' Morrigan') {
+        img.innerHTML = persos[2]
+    }
+    else if (personagem == ' Amren') {
+        img.innerHTML = persos[3]
+    }
+    else if (personagem == 'Azriel') {
+        img.innerHTML = persos[4]
+    }
+    else if (personagem == 'Cassian') {
+        img.innerHTML = persos[5]
+    }
+    else if (personagem == 'Nestha Archeron') {
+        img.innerHTML = persos[6]
+    }
+    else {
+        img.innerHTML = persos[7]
+    }
+
+
+
+
+
 
     var idUsuario = Number(sessionStorage.ID_USUARIO)
 
@@ -299,27 +344,53 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: ['Estrelas'],
+                label: ['1 Estrela'],
                 data: [],
                 fill: true,
                 borderColor: [
-                    'red',
-                    '#0583D2'
+                    '#4169E1',
                 ],
                 backgroundColor: [
-                    'red',
-                    '#0583D2'
+                    '#4169E1',
                 ],
                 tension: 0.1
             },
             {
-                label: ['Pontuação'],
+                label: ['2 Estrelas'],
                 data: [],
                 fill: true,
-                borderColor: 'blue',
+                borderColor: '#DA70D6',
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)'
+                    '#DA70D6'
+                ],
+                tension: 0.1
+            },
+            {
+                label: ['3 Estrelas'],
+                data: [],
+                fill: true,
+                borderColor: '#DC143C',
+                backgroundColor: [
+                    '#DC143C'
+                ],
+                tension: 0.1
+            }, {
+                label: ['4 Estrelas'],
+                data: [],
+                fill: true,
+                borderColor: '#4B0082',
+                backgroundColor: [
+                    '#4B0082'
+                ],
+                tension: 0.1
+            },
+            {
+                label: ['5 Estrelas'],
+                data: [],
+                fill: true,
+                borderColor: '#FFFF00',
+                backgroundColor: [
+                    '#FFFF00'
                 ],
                 tension: 0.1
             }
@@ -333,9 +404,14 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            labels.push(registro.livro);
-            dados.datasets[0].data.push(registro.livro);
-            dados.datasets[1].data.push(registro.pontuacao);
+            labels.push(registro.nome);
+
+
+            dados.datasets[0].data.push(registro.estrelas1);
+            dados.datasets[1].data.push(registro.estrelas2);
+            dados.datasets[2].data.push(registro.estrelas3);
+            dados.datasets[3].data.push(registro.estrelas4);
+            dados.datasets[4].data.push(registro.estrelas5);
         }
 
         console.log('----------------------------------------------')
@@ -364,7 +440,7 @@
             config
         );
 
-       // setTimeout(2000);
+        // setTimeout(2000);
         // setTimeout(() => atualizarGrafico5( dados, myChart5), 2000);
     }
 

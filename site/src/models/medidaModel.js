@@ -37,7 +37,17 @@ function buscarUltimasMedidas2() {
         order by idResultado desc;`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select livro, estrelas ,count(estrelas) as 'pontuacao' from estrelas group by estrelas, livro;`;
+        instrucaoSql = `select livro.nome, (select count(estrelas) from  estrelas join livro on fkLivro = idLivro where estrelas = 1 group by fkLivro) as 'estrelas1',
+        (select count(estrelas)
+        from estrelas join livro on fkLivro = idLivro where estrelas = 2) as 'estrelas2',
+        (select count(estrelas)
+        from estrelas join livro on fkLivro = idLivro where estrelas = 3) as 'estrelas3',
+        (select count(estrelas)
+        from estrelas join livro on fkLivro = idLivro where estrelas = 4) as 'estrelas4',
+        (select count(estrelas)
+        from estrelas join livro on fkLivro = idLivro where estrelas = 5) as 'estrelas5' from estrelas
+        join livro on fkLivro = idLivro group by fkLivro;
+        `;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

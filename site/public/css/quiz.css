@@ -120,6 +120,27 @@ width: 100%;
     width: 30px;
     height: 30px;
 }
+
+
+.img2{
+    width:auto ;
+    height: 20vw;
+}
+.msg{
+    width: 100%;
+    height: auto; 
+    text-align: center; 
+}
+
+.t{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
 footer {
     background-color:  #01090e;
     color: #ffffff;

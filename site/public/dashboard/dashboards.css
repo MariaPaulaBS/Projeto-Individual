@@ -1,16 +1,22 @@
 /* pagina mural */
 
-/* *,
-body {
-  font-family: "Exo 2", sans-serif;
-} */
+
+/* body {
+ 
+  display: flex;
+  flex-direction: column;
+}  */
 
 
-
+.all2{
+  display: flex;
+  flex-direction: column;
+  
+}
 .lateral{
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 250vh;
   width: 50%;
   background-color: black;
   justify-content: center;
@@ -50,7 +56,7 @@ body{
 .lateral{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 160vh;
   width: 10%;
   background-color: black;
   justify-content: center;
@@ -93,13 +99,27 @@ body{
   justify-content: center;
   align-items: center;
 }
-
+.graph2{
+  width: 80%;
+  height: 50vh;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+#grafico_livros{
+  width: 50vw;
+  height: 50vh;
+  margin-left: 320px;
+}
 .kpi{
   width: 20vw;
   height: 20vh;
   border: #ffffff solid 1px;
   margin-top: 60px;
-  box-shadow: rgb(0, 0, 0) 10px 5px 5px;
+  box-shadow: rgb(0, 0, 0) 20px 5px 5px;
+  opacity: 100%;
+    overflow: hidden;
+    z-index: 999;
 }
 .personagem{
   display: flex;
@@ -118,10 +138,17 @@ body{
 .ranking{
   width: 20vw;
   height: 50vh;
-  border: #ffffff solid 1px; 
+  /* border: #ffffff solid 1px;  */
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.img-Vetor{
+  width: auto;
+  height: 40vh; 
+  
+}
 .esquerda{
   width: 50%;
   height: 92.5%;
